@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Through Action</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #f3f4f6;
+  color: #1f2937;
+  line-height: 1.75;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+#progressContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  z-index: 9999;
+}
+
+#progressBar {
+  height: 6px;
+  width: 0%;
+  background: #dc2626;
+  transition: width 0.1s ease;
+}
+
+body.dark-mode {
+  background: #0b1220;
+  color: #e5e7eb;
+}
+
+body.dark-mode .card,
+body.dark-mode .stat-box {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+body.dark-mode .section-title {
+  color: #ffffff;
+}
+
+header {
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+}
+
+.hero-content p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 1.2rem;
+}
+
+.hero-buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 14px 28px;
+  background: #dc2626;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+nav {
+  background: #111827;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  text-align: center;
+  z-index: 1000;
+}
+
+nav a { color: white; margin: 0 12px; text-decoration: none; font-weight: bold; }
+nav button { margin-left: 15px; padding: 8px 12px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+
+section {
+  padding: 90px 10%;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+section.show { opacity: 1; transform: translateY(0); }
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.stat-box, .card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-box:hover, .card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.stat-box h3 { color: #dc2626; font-size: 2rem; }
+
+ul { margin-left: 22px; }
+
+footer { background: #111827; color: white; text-align: center; padding: 40px; }
+</style>
+</head>
+<body>
+
+<div id="progressContainer"><div id="progressBar"></div></div>
+
+<header>
+  <div class="hero-content">
+    <h1>Change Through Action: Making Our Communities Safer</h1>
+    <p>Gun violence remains one of the most persistent public safety challenges in modern society, affecting individuals across all backgrounds. Through informed awareness, education, and sustained community engagement, meaningful reduction in violence is possible.</p>
+    <div class="hero-buttons">
+      <a href="#facts">Learn More</a>
+      <a href="#stats">View Statistics</a>
+      <a href="#action">Take Action</a>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <a href="#facts">About</a>
+  <a href="#stats">Statistics</a>
+  <a href="#history">History</a>
+  <a href="#illinois">Illinois</a>
+  
+  <a href="#story">True Story</a>
+  <a href="#causes">Causes</a>
+  <a href="#solutions">Solutions</a>
+  <a href="#donate">Donate</a>
+  <a href="#action">Take Action</a>
+  <button id="darkToggle">🌙 Dark Mode</button>
+</nav>
+
+<section id="facts">
+<h2 class="section-title">Why Gun Violence Matters</h2>
+<div class="card">
+<p>Gun violence is a critical public health and safety issue that continues to impact communities across the United States and globally. Each year, thousands of lives are lost, while many more individuals experience lasting physical injury, psychological trauma, and social disruption. Beyond the immediate victims, entire communities are affected through increased fear, reduced trust, and long-term economic and emotional consequences. Understanding these impacts is essential in developing effective prevention strategies and encouraging collective responsibility.</p>
+
+<p>For many students and families in Illinois, gun violence is not viewed as a distant issue but as a challenge that directly affects schools, neighborhoods, and daily life. Communities throughout the state, especially in urban areas, continue to experience the emotional and social consequences of violence. Young people often grow up hearing about shootings, safety concerns, and community instability, which can shape how they view their future and their environment.</p>
+
+<p>Raising awareness encourages communities to have meaningful conversations about prevention, education, and support systems. When people become more informed about the causes and long-term effects of violence, they are more likely to support solutions that improve safety and strengthen communities. Awareness is an important first step toward creating lasting change.</p>
+</div>
+</section>
+
+<section id="stats">
+<h2 class="section-title">Gun Violence Statistics</h2>
+<div class="stats-container">
+  <div class="stat-box"><h3 data-target="46728">0</h3><p>Gun deaths in 2023</p></div>
+  <div class="stat-box"><h3><span data-target="58">0</span>%</h3><p>Of gun deaths were suicides</p></div>
+  <div class="stat-box"><h3><span data-target="79">0</span>%</h3><p>Of murders involved firearms</p></div>
+  <div class="stat-box"><h3 data-target="600">0</h3><p>Deaths daily worldwide</p></div>
+</div>
+</section>
+
+<section id="history">
+<h2 class="section-title">Gun Violence in America and Illinois</h2>
+
+<div class="stats-container">
+
+<div class="card">
+<h3 style="font-family: 'Montserrat', sans-serif; margin-bottom: 15px; color: #dc2626;">Gun Violence in America</h3>
+<p>The presence of firearms in the United States is deeply rooted in historical, legal, and cultural development, beginning with the Second Amendment established in 1791. Originally intended to support militia service and personal protection, firearms have since become widely accessible within civilian life. Over time, their role has expanded significantly, contributing to complex challenges related to public safety. Contemporary gun violence now includes a range of incidents such as domestic disputes, mass shootings, and self-inflicted harm, reflecting broader social and structural issues.</p>
+</div>
+
+<div class="card">
+<h3 style="font-family: 'Montserrat', sans-serif; margin-bottom: 15px; color: #dc2626;">Gun Violence in Illinois</h3>
+<p>Illinois, particularly the city of Chicago, has experienced long-standing challenges related to gun violence. These issues are often concentrated in communities affected by systemic inequality, limited economic opportunity, and under-resourced public services. Despite these challenges, numerous local organizations, educators, and community leaders continue to implement intervention programs, youth engagement initiatives, and violence prevention strategies aimed at improving safety and stability across affected neighborhoods.</p>
+</div>
+
+</div>
+</section>
+
+
+
+<section id="story">
+<h2 class="section-title">True Story: Hadiya Pendleton</h2>
+<div class="card">
+<p>Hadiya Pendleton was a 15-year-old student from Chicago recognized for her dedication to academics, her positive character, and her active involvement in school activities. She attended King College Prep High School and participated in her school’s marching band. In January 2013, she traveled to Washington, D.C. with her classmates to perform during events celebrating President Barack Obama’s second inauguration.</p>
+
+<p>On January 29, 2013, Hadiya and several friends were standing under a canopy in a local park after completing their exams when gunfire broke out nearby. She was struck during the incident and later died from her injuries. Investigators reported that the shooting was a case of mistaken identity related to gang conflict, even though Hadiya herself was not involved. Her death deeply shocked the city and became a widely recognized example of the impact of gun violence on innocent individuals.</p>
+
+<p>Hadiya’s story received national attention, in part because of her recent participation in inauguration-related performances. Following her death, public figures including President Barack Obama referenced her story in calls for violence prevention, and Michelle Obama attended her funeral in support of her family. Prior to her passing, Hadiya had also appeared in a school anti-violence video, and her legacy continues to inspire awareness efforts aimed at reducing gun violence.</p>
+</div>
+</section>
+
+<section id="causes">
+<h2 class="section-title">Causes of Gun Violence</h2>
+<div class="card">
+<p>Gun violence is influenced by a combination of social, economic, and environmental factors. While every situation is different, researchers and community organizations have identified several common causes that contribute to violence in communities across the country. One major factor is the widespread availability of firearms, which can increase the likelihood of violent incidents becoming deadly.</p>
+
+<p>In many communities, poverty, unemployment, limited educational opportunities, and lack of access to healthcare can create environments where violence becomes more common. Community instability, discrimination, and long-term inequality may also contribute to stress, fear, and conflict. Additionally, individuals struggling with untreated mental health challenges or trauma may face greater risks when proper support systems are unavailable.</p>
+
+<ul>
+<li>Widespread access to firearms</li>
+<li>Poverty and lack of community resources</li>
+<li>Insufficient mental health resources</li>
+<li>Community-level violence and instability</li>
+<li>Limited educational and economic opportunities</li>
+<li>Domestic violence and unsafe home environments</li>
+<li>Lack of conflict resolution resources</li>
+</ul>
+
+<p>Understanding these causes is important because gun violence cannot be solved through one single action alone. Effective solutions require addressing both immediate safety concerns and the deeper social issues that contribute to violence over time.</p>
+</div>
+</section>
+
+<section id="solutions">
+<h2 class="section-title">Solutions and Prevention</h2>
+<div class="card">
+<p>Reducing gun violence requires a long-term and comprehensive approach involving governments, schools, community organizations, healthcare providers, and individuals. Experts believe that prevention strategies are most effective when they focus on both public safety and the underlying causes of violence.</p>
+
+<p>One important solution is strengthening responsible firearm safety measures, including secure storage practices, background checks, and laws designed to prevent dangerous individuals from obtaining weapons. Communities can also benefit from violence intervention programs that identify individuals at high risk and provide support before violence occurs.</p>
+
+<p>Mental health services, youth mentorship programs, after-school activities, and educational opportunities also play a major role in prevention. When young people have access to safe environments, guidance, and positive opportunities, communities are often stronger and more stable. Schools and community leaders can also promote conflict resolution, emotional support, and violence prevention education.</p>
+
+<p>Although no single policy can completely eliminate violence, consistent community action, education, and support systems can significantly reduce harm and improve public safety over time.</p>
+</div>
+</section>
+
+<section id="donate">
+<h2 class="section-title">Support the Cause</h2>
+<div class="card">
+<p>Financial contributions play an important role in supporting organizations that assist victims, fund prevention initiatives, and provide mental health and community services. Donations help sustain programs that work to reduce violence while also supporting individuals and families who have been directly affected.</p>
+
+<p>Community organizations often rely on donations to provide counseling services, youth programs, educational workshops, emergency assistance, and violence prevention outreach. These programs help create safer neighborhoods by supporting young people, strengthening families, and increasing access to important resources.</p>
+
+<p>Even small contributions can make a meaningful difference. Collective support allows organizations to continue raising awareness, expanding prevention efforts, and promoting long-term safety within communities. By supporting these efforts, individuals can help create environments where future generations feel safer and more supported.</p>
+
+<div style="text-align:center; margin-top:30px;">
+<a href="https://gofund.me/ca47c458f" target="_blank" style="display:inline-block; background:#dc2626; color:white; padding:16px 34px; border-radius:10px; text-decoration:none; font-weight:700; font-size:1.05rem; transition:0.3s ease;">Donate Now</a>
+</div>
+</div>
+</section>
+
+<section id="action">
+<h2 class="section-title">How You Can Help</h2>
+<div class="card">
+<p>Reducing gun violence requires participation from individuals, schools, families, and entire communities. While large-scale change often takes time, everyday actions can still make a meaningful difference. Raising awareness and supporting prevention efforts can help encourage safer environments and stronger communities.</p>
+
+<ul>
+<li>Engage in community awareness efforts</li>
+<li>Support local prevention programs</li>
+<li>Advocate for responsible safety policies</li>
+<li>Participate in educational initiatives</li>
+<li>Volunteer with youth or mentorship programs</li>
+<li>Promote safe conflict resolution strategies</li>
+<li>Support mental health awareness and resources</li>
+<li>Share reliable information about prevention and safety</li>
+<li>Participate in community discussions and events</li>
+</ul>
+
+<p>Creating change begins with awareness, education, and community involvement. When individuals work together to support safer practices and stronger support systems, communities become better prepared to reduce violence and protect future generations.</p>
+</div>
+</section>
+
+<footer>
+<p style="font-size: 1.2rem; margin-bottom: 15px;">Change begins with awareness, education, and sustained action.</p>
+<p style="max-width: 800px; margin: auto; line-height: 1.8;">This website was created to raise awareness about the impact of gun violence and encourage informed conversations about prevention, education, and community safety. Through understanding and collective action, communities can work toward creating safer environments for future generations.</p>
+<br>
+<p>Sources referenced include public information from organizations such as the <strong>Centers for Disease Control and Prevention (CDC)</strong> and <strong>Amnesty International</strong>.</p>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  const winScroll = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  document.getElementById('progressBar').style.width = (winScroll / height) * 100 + '%';
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) e.target.classList.add('show');
+  });
+},{threshold:0.15});
+document.querySelectorAll('section').forEach(s => observer.observe(s));
+
+document.getElementById('darkToggle').addEventListener('click',()=>{
+  document.body.classList.toggle('dark-mode');
+});
+
+function animateCounters(){
+  document.querySelectorAll('[data-target]').forEach(counter=>{
+    const update=()=>{
+      const target=+counter.dataset.target;
+      const current=+counter.innerText;
+      const inc=target/100;
+      if(current<target){counter.innerText=Math.ceil(current+inc);setTimeout(update,20);}else counter.innerText=target;
+    };
+    update();
+  });
+}
+animateCounters();
+</script>
+
+</body>
+</html>
